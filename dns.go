@@ -7,6 +7,7 @@ package cert
 
 import (
 	"github.com/codeallergy/glue"
+	"github.com/sprintframework/dns"
 	"reflect"
 )
 
@@ -20,3 +21,14 @@ type DNSChallenge interface {
 }
 
 
+var DynDNSServiceClass = reflect.TypeOf((*DynDNSService)(nil)).Elem()
+
+type DynDNSService interface {
+	glue.NamedBean
+	glue.InitializingBean
+
+	EnsureAllPublic(subDomains ...string) error
+
+	EnsureCustom(func(client dns.DNSProviderClient, zone string, externalIP string) error) error
+
+}
