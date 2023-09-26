@@ -3,10 +3,10 @@ module github.com/sprintframework/cert
 go 1.17
 
 require (
-	github.com/codeallergy/glue v1.1.0
+	github.com/codeallergy/glue v1.1.3
 	github.com/keyvalstore/store v1.3.0
 	github.com/sprintframework/certpb v1.0.0
-	github.com/sprintframework/dns v1.0.0
+	github.com/sprintframework/dns v1.0.1
 	golang.org/x/crypto v0.6.0
 )
 
